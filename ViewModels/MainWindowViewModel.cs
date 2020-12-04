@@ -9,6 +9,7 @@ namespace PrismUI.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        // test for git 
         // Navigation 画面遷移を使う場合は，IReagionManager 必須
         private IRegionManager _regionManager;
         // Pop Up 画面表示を使う場合，IDialogService 必須
