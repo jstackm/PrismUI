@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="PrismUI.Views.NavigationB"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+            <Label Content="View B"
+                   FontSize="20"/>
+            <TextBlock Margin="5"
+                       FontSize="14">
+                View Transition with  <LineBreak />
+                Parameters recieved from Other View
+            </TextBlock>
+
+            <TextBlock Text="{Binding ViewBText}"
+                       Margin="5"
+                       FontSize="18"/>
+
+            <Button Content="Display parameter 1"
+                    Margin="3"
+                    Command="{Binding ViewParameter1}"/>
+            <Button Content="Display parameter 2"
+                    Margin="3"
+                    Command="{Binding ViewParameter2}"/>
+            <Button Content="Display parameter 3"
+                    Margin="3"
+                    Command="{Binding ViewParameter3}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

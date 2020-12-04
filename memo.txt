@@ -1,0 +1,77 @@
+<Project の作成>
+	Prism Blank App -> Unity を選択
+
+<基本のデータバインド>
+	<View>
+		1, バインドしたいプロパティに {Binding ***} として ViewModel のプロパティ名を定義
+
+	<ViewModel>
+		1, サンプルにある形でプロパティを定義
+			private string _*** = "XXXX";
+			public string ***
+			{
+			    get { return _***; }
+				set { SetProperty(ref _***, value); }
+			}
+
+
+
+<イベント>
+	<ViewModel>
+		1, バインドしたいコマンドの DelegateCommand 型プロパティを定義 
+			public DelegateCommand *** { get; }
+		2, コンストラクタでそのプロパティを new する．DelegateCommand のコンストラクタ引数は実処理メソッド
+			*** = new DelegateCommand(***Exe)
+		3, プライベートメソッド ***Exe を定義
+	<View>
+		ボタンなどに対し Command = "{Binding ***}" とバインドし，ViewModel の DelegateCommand と紐づける
+
+
+<Window 遷移 Navigation>
+<基本形>
+	<Project>
+		1, View を Prism UserContol で作成
+			Window は独立で存在でき，ホストとなるもの．遷移するViewは Window ではなく UserControlで作る
+
+	<App.xaml> : コンテンツの利用登録
+		1, App.xaml.cs の 抽象実装メソッド RebisterTypes に下記を追加
+			containerRegistry.RegisterForNavigation<ViewA>();
+			書式の意味はよくわからない<**>()ってどういう意味？
+
+	<View> : 表示場所の指定
+		1,  コンテンツを表示させたいところに以下を追加
+	        <ContentControl prism:RegionManager.RegionName="__ContentRegion__" />
+
+	<ViewModel> : 表示するコンテンツの受け渡し
+		1, 画面を表示する View の ViewModel に IRegionManager型のプライベートフィールドを定義
+			private IRegionManager _regionManager;
+		2, コンストラクタ引数に追加
+	        public MainWindowViewModel(IRegionManager regionManager)
+		    {
+			    _regionManager = regionManager;
+			}
+		3, 画面遷移のプライベートメソッドにて
+			_regionManager.RequestNavigate("__ContentRegion__", nameof(__RequestedView__));
+			として View の __ContentRegion__ に 画面 __RequestedView__ を表示する
+
+<メイン画面からパラメータを渡す場合>
+	<View>
+		1, ボタンなどに対し Command = "{Binding ***}" とバインドし，ViewModel の DelegateCommand と紐づける
+	
+	<ViewModel>
+		1, INavigationAware を継承させる
+		2, INavigationAware の抽象メソッドを実装
+
+
+
+
+
+
+<Window 遷移 Pop Up>
+	<Project>
+		1, View を Prism UserContol で作成
+	
+
+
+
+	

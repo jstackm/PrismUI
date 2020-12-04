@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="PrismUI.Views.ToolsControlEvent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel>
+            <Label Content="Event Control"
+                   FontSize="20"/>
+            <Label Content="{Binding ToolsEventLabel}"/>
+            <Label Content="{Binding ToolsEventLabelArgs}"/>
+            <ComboBox ItemsSource="{Binding ToolsEventComboBoxItems}"
+                      DisplayMemberPath="DisplayValue"
+                      SelectedValuePath="Value"
+                      SelectedItem="{Binding ToolsEventComboBoxSelectedItem}"
+                      Width="200"
+                      Margin="10">
+                <!--
+                    Xamlでのイベントトリガー
+                    NuGet で Blend.Interactivity,Wpf をインストール
+                    xmlns に http://schemas.microsoft.com/expression/2010/interactivity 参照を追加
+                    イベントトリガのイベント名は，各コントロールのプロパティで調べる
+                    prism:InvokeCommandAction 
+                        Command ：イベントコマンドのバインド
+                        TriggerParameterPath ：イベント引数の指定（object[]としてDelegateCommand に渡される）
+                            コードビハインドに一度イベントを生成し，引数 "e" の中身をチェックして調べるとよい
+                -->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <prism:InvokeCommandAction 
+                            Command="{Binding ToolsEventSelectionChanged}"
+                            TriggerParameterPath="AddedItems"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

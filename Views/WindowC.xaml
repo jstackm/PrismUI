@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PrismUI.Views.WindowC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True" Height="240" Width="480">
+    <Grid>
+        <StackPanel>
+            <Label Content="Window C"
+                   FontSize="24"/>
+            <TextBlock FontSize="16"
+                       Margin="10">
+                Display Pop-Up Window <LineBreak/>
+                with Parameters Returned to Main Window
+            </TextBlock>
+            <TextBox Text="{Binding WindowCText}"
+                     Margin="10"
+                     FontSize="20"/>
+            <Button Content="Return Parameter"
+                    Margin="10,0,0,3"
+                    Width="200"
+                    HorizontalAlignment="left"
+                    Command="{Binding ReturnParameterToMainWindow}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
