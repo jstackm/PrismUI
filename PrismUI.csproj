@@ -64,6 +64,8 @@
     <Compile Include="ViewModels\ToolsComboBoxViewModel.cs" />
     <Compile Include="ViewModels\ToolsControlEventViewModel.cs" />
     <Compile Include="ViewModels\ToolsListBoxViewModel.cs" />
+    <Compile Include="ViewModels\ToolsRadioCheckButtonViewModel.cs" />
+    <Compile Include="ViewModels\ToolsSliderViewModel.cs" />
     <Compile Include="ViewModels\WindowAViewModel.cs" />
     <Compile Include="ViewModels\WindowBViewModel.cs" />
     <Compile Include="ViewModels\WindowCViewModel.cs" />
@@ -88,6 +90,12 @@
     </Compile>
     <Compile Include="Views\ToolsListBox.xaml.cs">
       <DependentUpon>ToolsListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolsRadioCheckButton.xaml.cs">
+      <DependentUpon>ToolsRadioCheckButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolsSlider.xaml.cs">
+      <DependentUpon>ToolsSlider.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WindowA.xaml.cs">
       <DependentUpon>WindowA.xaml</DependentUpon>
@@ -139,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ToolsListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolsRadioCheckButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolsSlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

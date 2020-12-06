@@ -36,6 +36,8 @@ namespace PrismUI.ViewModels
             ToolsListBoxButton = new DelegateCommand(ToolsListBoxButtonExe);
             ToolsComboBoxButton = new DelegateCommand(ToolsComboBoxButtonExe);
             ToolsControlEventButton = new DelegateCommand(ToolsControlEventButtonExe);
+            ToolsRadioCheckButton = new DelegateCommand(ToolsRadioCheckButtonExe);
+            ToolsSliderButton = new DelegateCommand(ToolsSliderButtonExe);
         }
 
         // プロパティの定型（デフォルト記述）
@@ -179,6 +181,8 @@ namespace PrismUI.ViewModels
         public DelegateCommand ToolsListBoxButton { get; }
         public DelegateCommand ToolsComboBoxButton { get; }
         public DelegateCommand ToolsControlEventButton { get; }
+        public DelegateCommand ToolsRadioCheckButton { get; }
+        public DelegateCommand ToolsSliderButton { get; }
         //-----------------------------------------------
         // リストボックス
         private void ToolsListBoxButtonExe()
@@ -199,13 +203,50 @@ namespace PrismUI.ViewModels
             get { return _toolsComboBoxText; }
             set { SetProperty(ref _toolsComboBoxText, value); }
         }
-
         //-----------------------------------------------
         // イベントトリガ
         private void ToolsControlEventButtonExe()
         {
             _regionManager.RequestNavigate("ContentRegion", nameof(ToolsControlEvent));
         }
+
+        // ラジオボタン/チェックボタン
+        private void ToolsRadioCheckButtonExe()
+        {
+            _regionManager.RequestNavigate("ContentRegion", nameof(ToolsRadioCheckButton));
+        }
+
+        // スライダー
+        private void ToolsSliderButtonExe()
+        {
+            _regionManager.RequestNavigate("ContentRegion", nameof(ToolsSlider));
+        }
+        private string _toolsSliderText = string.Empty;
+        public string ToolsSliderText
+        {
+            get { return _toolsSliderText; }
+            set { SetProperty(ref _toolsSliderText, value); }
+        }
+        private string _toolsSliderTextColor = string.Empty;
+        public string ToolsSliderTextColor
+        {
+            get { return _toolsSliderTextColor; }
+            set { SetProperty(ref _toolsSliderTextColor, value); }
+        }
+
+
+
+        //******************************
+        // メインウインドウコントロール
+        //******************************
+        //ProgressBarValue
+        private int _progressBarValue;
+        public int ProgressBarValue
+        {
+            get { return _progressBarValue; }
+            set { SetProperty(ref _progressBarValue, value); }
+        }
+
     }
 }
 

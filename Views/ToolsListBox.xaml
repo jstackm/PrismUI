@@ -15,7 +15,7 @@
                      Margin="10"
                      ItemsSource="{Binding ToolsListBoxItems}"
                      SelectedItem="{Binding ToolsListBoxSelectedItem}"/>
-            <Button Content="Return Select Item to Main View"
+            <Button Content="Get Select Item"
                     Width="200"
                     Margin="10"
                     Command="{Binding ToolsListBoxButton}"/>

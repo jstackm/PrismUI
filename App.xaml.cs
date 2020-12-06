@@ -27,6 +27,8 @@ namespace PrismUI
             containerRegistry.RegisterForNavigation<ToolsListBox>();
             containerRegistry.RegisterForNavigation<ToolsComboBox>();
             containerRegistry.RegisterForNavigation<ToolsControlEvent>();
+            containerRegistry.RegisterForNavigation<ToolsRadioCheckButton>();
+            containerRegistry.RegisterForNavigation<ToolsSlider>();
 
             // Pop Up 表示画面の登録
             containerRegistry.RegisterDialog<WindowA, WindowAViewModel>();

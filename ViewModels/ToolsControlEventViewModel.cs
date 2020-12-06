@@ -45,7 +45,8 @@ namespace PrismUI.ViewModels
         public DelegateCommand<object[]> ToolsEventSelectionChanged { get; }
         private void ToolsEventSelectionChangedExe(object[] items)
         {
-            // イベント発火自の SelectedItem などをとってきてもよいし
+            // イベント発火時の SelectedItem などをとってきてもよいし
+            // イベント発火時の SelectedItem などをとってきてもよいし
             ToolsEventLabel = ToolsEventComboBoxSelectedItem.Value + " : " + ToolsEventComboBoxSelectedItem.DisplayValue;
             // TriggerParameterPath でとってきたイベント引数の中身を処理してもよい
             // イベント引数は object型なのでキャストする必要がある（もっと良い方法がありそう…）
