@@ -199,10 +199,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Blend.Interactivity.Wpf">
-      <Version>1.0.1340</Version>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.31</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
+    <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="memo.txt" />

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="PrismUI.Views.ToolsControlEvent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
@@ -20,6 +20,12 @@
                     Xamlでのイベントトリガー
                     NuGet で Blend.Interactivity,Wpf をインストール
                     xmlns に http://schemas.microsoft.com/expression/2010/interactivity 参照を追加
+                
+                    >> 追記：
+                            Blend.Interactivity.Wpfではサポートされなくなった模様
+                            Microsoft.Xaml.Behaviors.Wpf を NuGet し，
+                            http://schemas.microsoft.com/xaml/behaviors を参照するとよい
+                
                     イベントトリガのイベント名は，各コントロールのプロパティで調べる
                     prism:InvokeCommandAction 
                         Command ：イベントコマンドのバインド
